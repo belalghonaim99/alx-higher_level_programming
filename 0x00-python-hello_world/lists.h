@@ -3,9 +3,11 @@
 
 #include <stdlib.h>
 /**
- * listint_s
+ * listint_s - single linked list
  * @n:integer
  * @next: point next node
+ * Description: single linked list node
+ * Holberton project
  */
 typedef struct listint_s
 {
