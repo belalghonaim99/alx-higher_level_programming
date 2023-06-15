@@ -4,6 +4,6 @@ def multiply_by_2(a_dictionary):
     list_keys = list(multi_dir.keys())
 
     for y in list_keys:
-        for_dir[y] *= 2
+        multi_dir[y] *= 2
 
     return (multi_dir)
