@@ -2,6 +2,6 @@
 """define a class Square"""
 
 class Square:
-    """represent a Square"""
+    """empty Square"""
     pass
 
