@@ -7,5 +7,5 @@ class Square:
 
 
     def __int__(self, size):
-        """intializing square"""
+        """initialize new  square"""
         self.__size =size
