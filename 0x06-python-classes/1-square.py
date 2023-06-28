@@ -6,6 +6,6 @@ class Square:
     """represent square"""
     
 
-    def _int_(self, size):
+    def __int__(self, size):
 
         self.__size =size
