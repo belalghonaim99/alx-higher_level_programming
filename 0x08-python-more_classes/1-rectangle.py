@@ -4,11 +4,12 @@
 
 class Rectangle:
     """in this task the class We create private instance attributes by taking in two arguments
-    Args: width (int): width_horizontal of Rectangle must be 0
+    Args:
+        width (int): width_horizontal of Rectangle must be 0
         height (int): height_vertical of Rectangle must be 0 """
 
     def __init__(self, width=0, height=0):
-         """attribute must be defined below"""
+        """attribute must be defined below"""
         self.width = width
         self.height = height
 
