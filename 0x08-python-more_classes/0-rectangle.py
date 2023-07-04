@@ -2,8 +2,7 @@
 """0-rectangle Task"""
 
 
-
 class Rectangle:
-    """empty class that defines a Rectangle
-    """
-   pass
+    """empty class that defines a Rectangle"""
+
+    pass
