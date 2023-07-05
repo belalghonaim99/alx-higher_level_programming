@@ -49,8 +49,10 @@ class Rectangle:
     def height(self, value):
         """Args: value int: value of Rectangle
         Attributes: _height int: height_vertical of Rectangle
-        raise: TypeError if value not int
-        valueErorr if value less than 0 """
+        raises: 
+             TypeError if value not int
+             valueErorr if value less than 0 
+             """
 
         if type(value) is not int:
             raise TypeError("height must be an integer")
