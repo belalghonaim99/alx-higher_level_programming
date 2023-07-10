@@ -1,5 +1,7 @@
 #!/usr/bin/python3
-"""the method is_same_class"""
+"""
+the method is_same_class"""
+
 
 
 
