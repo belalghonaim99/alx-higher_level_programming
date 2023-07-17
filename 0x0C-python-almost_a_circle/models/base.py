@@ -12,10 +12,7 @@ class Base:
 
     Private Class Attributes:  __nb_object int: number of instant bases"""
 
-
-   
-   
-     __nb_objects = 0
+    __nb_objects = 0
 
     def __init__(self, id=None):
         """init new Base
