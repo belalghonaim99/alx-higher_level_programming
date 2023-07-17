@@ -7,11 +7,9 @@ import turtle
 
 
 class Base:
-    """Base model 
-    represents the Base for other classes in project 0x0C
+    """Base model of represents the Base for other classes in project 0x0C
 
-    Private Class Attributes:
-        __nb_object int: number of instant bases """
+    Private Class Attributes:  __nb_object int: number of instant bases """
 
     __nb_objects = 0
 
