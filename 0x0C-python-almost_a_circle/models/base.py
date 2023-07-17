@@ -25,7 +25,6 @@ class Base:
 
     @staticmethod
     def to_json_string(list_dictionaries):
-
         """return the JSON serial of list of dictionaries
 
         Args:
