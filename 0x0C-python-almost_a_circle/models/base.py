@@ -151,7 +151,7 @@ class Base:
             turtle.up()
             turtle.goto(rect.x, rect.y)
             turtle.down()
-            for i in range(2):
+            for y in range(2):
                 turtle.forward(rect.width)
                 turtle.left(90)
                 turtle.forward(rect.height)
@@ -164,7 +164,7 @@ class Base:
             turtle.up()
             turtle.goto(sq.x, sq.y)
             turtle.down()
-            for i in range(2):
+            for y in range(2):
                 turtle.forward(sq.width)
                 turtle.left(90)
                 turtle.forward(sq.height)
