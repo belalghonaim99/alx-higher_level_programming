@@ -21,29 +21,29 @@ class TestBase_instantiation(unittest.TestCase):
     """Unittests for testing instantiation of the Base class."""
 
     def test_no_arg(self):
-        Base1 = Base()
-        Base2 = Base()
-        self.assertEqual(Base1.id, Base2.id - 1)
+        b1 = Base()
+        b2 = Base()
+        self.assertEqual(b1.id, b2.id - 1)
 
     def test_three_bases(self):
-        Base1 = Base()
-        Base2 = Base()
-        Base3 = Base()
-        self.assertEqual(Base1.id, Base3.id - 2)
+        b1 = Base()
+        b2 = Base()
+        b3 = Base()
+        self.assertEqual(b1.id, b3.id - 2)
 
     def test_None_id(self):
-        Base1 = Base(None)
-        Base2 = Base(None)
-        self.assertEqual(Base1.id, Base2.id - 1)
+        b1 = Base(None)
+        b2 = Base(None)
+        self.assertEqual(b1.id, b2.id - 1)
 
     def test_unique_id(self):
         self.assertEqual(12, Base(12).id)
 
     def test_nb_instances_after_unique_id(self):
-        Base1 = Base()
-        Base2 = Base(12)
-        Base3 = Base()
-        self.assertEqual(Base1.id, Base3.id - 1)
+        b1 = Base()
+        b2 = Base(12)
+        b3 = Base()
+        self.assertEqual(b1.id, 3.id - 1)
 
     def test_id_public(self):
         b = Base(12)
@@ -130,9 +130,9 @@ class TestBase_to_json_string(unittest.TestCase):
         self.assertTrue(len(Base.to_json_string([s.to_dictionary()])) == 39)
 
     def test_to_json_string_square_two_dicts(self):
-        Square1 = Square(10, 2, 3, 4)
-        Square2 = Square(4, 5, 21, 2)
-        list_dicts = [Square1.to_dictionary(), Square2.to_dictionary()]
+        s1 = Square(10, 2, 3, 4)
+        s2 = Square(4, 5, 21, 2)
+        list_dicts = [s1.to_dictionary(), s2.to_dictionary()]
         self.assertTrue(len(Base.to_json_string(list_dicts)) == 78)
 
     def test_to_json_string_empty_list(self):
@@ -170,15 +170,15 @@ class testbase_save_to_file(unittest.TestCase):
             pass
 
     def test_save_to_file_one_rectangle(self):
-        Rect = Rectangle(10, 7, 2, 8, 5)
-        Rectangle.save_to_file([Rect])
+        r = Rectangle(10, 7, 2, 8, 5)
+        Rectangle.save_to_file([r])
         with open("Rectangle.json", "r") as f:
             self.assertTrue(len(f.read()) == 53)
 
     def test_save_to_file_two_rectangles(self):
-        Rect1 = Rectangle(10, 7, 2, 8, 5)
-        Rect2 = Rectangle(2, 4, 1, 2, 3)
-        Rectangle.save_to_file([Rect1, Rect2])
+        r1 = Rectangle(10, 7, 2, 8, 5)
+        r2 = Rectangle(2, 4, 1, 2, 3)
+        Rectangle.save_to_file([r1, r2])
         with open("Rectangle.json", "r") as f:
             self.assertTrue(len(f.read()) == 105)
 
@@ -189,9 +189,9 @@ class testbase_save_to_file(unittest.TestCase):
             self.assertTrue(len(f.read()) == 39)
 
     def test_save_to_file_two_squares(self):
-        Square1 = Square(10, 7, 2, 8)
-        Square2 = Square(8, 1, 2, 3)
-        Square.save_to_file([Square1, Square2])
+        s1 = Square(10, 7, 2, 8)
+        s2 = Square(8, 1, 2, 3)
+        Square.save_to_file([s1, s2])
         with open("Square.json", "r") as f:
             self.assertTrue(len(f.read()) == 77)
 
@@ -316,13 +316,13 @@ class TestBase_create(unittest.TestCase):
         self.assertEqual("[Square] (7) 5/1 - 3", str(Square1))
 
     def test_create_square_new(self):
-        Square1 = Square(3, 5, 1, 7)
-        s1_dictionary = Square1.to_dictionary()
+        s1 = Square(3, 5, 1, 7)
+        s1_dictionary = s1.to_dictionary()
         s2 = Square.create(**s1_dictionary)
         self.assertEqual("[Square] (7) 5/1 - 3", str(s2))
 
     def test_create_square_is(self):
-        Square1 = Square(3, 5, 1, 7)
+        s11 = Square(3, 5, 1, 7)
         s1_dictionary = Square1.to_dictionary()
         s2 = Square.create(**s1_dictionary)
         self.assertIsNot(Square1, s2)
@@ -385,9 +385,9 @@ class TestBase_load_from_file(unittest.TestCase):
         self.assertEqual(str(s2), str(list_squares_output[1]))
 
     def test_load_from_file_square_types(self):
-        Square1 = Square(5, 1, 3, 3)
-        Square2 = Square(9, 5, 2, 3)
-        Square.save_to_file([Square1, Square2])
+        s1 = Square(5, 1, 3, 3)
+        s2 = Square(9, 5, 2, 3)
+        Square.save_to_file([s1, s2])
         output = Square.load_from_file()
         self.assertTrue(all(type(obj) == Square for obj in output))
 
