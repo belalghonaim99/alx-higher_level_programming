@@ -114,26 +114,11 @@ class Base:
                     Files_Names = ["id", "size", "x", "y"]
                 list_dic = csv.DictReader(csvfile, Files_Names=Files_Names)
                 list_dic = [dict([y, int(x)] for y, x in i.items())
-                              for i in list_dic]
+                            for i in list_dic]
                 return [cls.create(**i) for i in list_dic]
         except IOError:
             return []
-    @classmethod
-    def save_to_file_csv(cls, list_objs):
-        """write the csv serial of the list of object to file
-        Args: list_objs list: list of inherit Base instance """
-        FileName = cls.__name__ + ".csv"
-        with open(FileName, "w", newline="") as csvfile:
-            if list_objs is None or list_objs == []:
-                csvfile.write("[]")
-            else:
-                if cls.__name__ == "Rectangle":
-                    fieldnames = ["id", "width", "height", "x", "y"]
-                else:
-                    fieldnames = ["id", "size", "x", "y"]
-                writer = csv.DictWriter(csvfile, fieldnames=fieldnames)
-                for obj in list_objs:
-                    writer.writerow(obj.to_dictionary())
+
     @staticmethod
     def draw(list_rectangles, list_squares):
         """draw rectangle and Square using the turtle module
