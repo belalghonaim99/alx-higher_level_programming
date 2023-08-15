@@ -1,4 +1,4 @@
--- Write a script that creates a table second_table in the database hbtn_0c_0 in your MySQL server and add multiples rows.
+-- script that creates a table second_table in the database hbtn_0c_0 in your MySQL server and add multiples rows.
 -- cat 9-full_creation.sql | mysql -hlocalhost -uroot -p hbtn_0c_0
 INSERT INTO second_table (id, name, score) VALUES (1, "John", 10);
 INSERT INTO second_table (id, name, score) VALUES (2, "Alex", 3);
