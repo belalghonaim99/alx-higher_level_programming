@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-"""Python file similar to model_state.py named model_city.py 
+"""Python file similar to model_state.py named model_city.py
 that contains the class definition of a City."""
 import sys
 from sqlalchemy import create_engine
@@ -15,6 +15,6 @@ if __name__ == "__main__":
     sess = Session_maker()
 
     for city, state in sess.query(City, State) \
-                              .filter(City.state_id == State.id) \
-                              .order_by(City.id):
+            .filter(City.state_id == State.id) \
+            .order_by(City.id):
         print("{}: ({}) {}".format(state.name, city.id, city.name))
