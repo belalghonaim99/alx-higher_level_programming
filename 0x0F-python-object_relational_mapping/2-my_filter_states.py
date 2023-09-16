@@ -10,8 +10,8 @@ if __name__ == '__main__':
                          passwd=argv[2], db=argv[3])
 
     cr = db.cursor()
-    nmeSr = "SELECT * FROM states WHERE name LIKE BINARY '{}'".format(argv[4])
-    cr.execute(nmeSr)
+    snMsh = "SELECT * FROM states WHERE name LIKE BINARY '{}'".format(argv[4])
+    cr.execute(snMsh)
     rows = cr.fetchall()
     for y in rows:
         print(y)
