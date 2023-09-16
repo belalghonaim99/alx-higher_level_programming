@@ -1,20 +1,23 @@
 #!/usr/bin/python3
-"""Python file similar to model_state.py named model_city.py
-that contains the class definition of a City."""
-import sys
+"""
+Python file similar to model_state.py
+named model_city.py that contains
+the class definition of a City.
+"""
+from model_city import City
+from model_state import Base, State
 from sqlalchemy import create_engine
 from sqlalchemy.orm import sessionmaker
-from model_state import State
-from model_city import City
+from sys import argv
 
 if __name__ == "__main__":
-    eng = create_engine("mysql+mysqldb://{}:{}@localhost/{}"
-                        .format(sys.argv[1], sys.argv[2], sys.argv[3]),
-                        pool_pre_ping=True)
-    Session_maker = sessionmaker(bind=eng)
-    sess = Session_maker()
+    engine = create_engine('mysql+mysqldb://{}:{}@localhost/{}'.format(
+        argv[1], argv[2], argv[3]), pool_pre_ping=True)
+    session_maker = sessionmaker(bind=engine)
+    sess = session_maker()
+    Base.metadata.create_all(engine)
 
-    for city, state in sess.query(City, State) \
-            .filter(City.state_id == State.id) \
-            .order_by(City.id):
-        print("{}: ({}) {}".format(state.name, city.id, city.name))
+    c = sess.query(State, City).join(City).order_by(City.id)
+    for s, c in c:
+        print("{}: ({}) {}".format(s.name, c.id, c.name))
+    sess.close()
