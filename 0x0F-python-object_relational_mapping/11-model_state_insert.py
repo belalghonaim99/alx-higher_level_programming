@@ -11,7 +11,7 @@ if __name__ == "__main__":
     Session_maker = sessionmaker(bind=eng)
     sess = Session_maker()
 
-    louisiana_state = State(name="Louisiana")
-    sess.add(louisiana_state)
+    louisiana = State(name="Louisiana")
+    sess.add(louisiana)
     sess.commit()
-    print(louisiana_state.id)
+    print(louisiana.id)
