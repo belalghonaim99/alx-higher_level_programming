@@ -11,14 +11,13 @@ from sys import argv
 
 if __name__ == "__main__":
     eng = create_engine('mysql+mysqldb://{}:{}@localhost/{}'.format(
-        argv[1], argv[2], argv[3]), pool_pre_ping=True)
+                        argv[1], argv[2], argv[3]), pool_pre_ping=True)
     Session_maker = sessionmaker(bind=eng)
     sess = Session_maker()
     Base.metadata.create_all(eng)
 
-    s = sess.query(State).filter(State.name == argv[4]).first()
-
-    if s:
+    st = sess.query(State).filter(State.name == argv[4]).first()
+    if st:
         print("{}".format(s.id))
     else:
         print("Not found")
