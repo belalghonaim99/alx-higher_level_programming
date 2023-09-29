@@ -3,11 +3,11 @@
 followed by the HTTP status code"""
 
 
-if __name__ == "__main__":
-    from urllib.request import urlopen
-    from urllib.error import HTTPError
-    from sys import argv
+from urllib.request import urlopen
+from urllib.error import HTTPError
+from sys import argv
 
+if __name__ == "__main__":
     try:
         with urlopen(argv[1]) as body_response:
             print(body_response.read().decode('utf-8'))
