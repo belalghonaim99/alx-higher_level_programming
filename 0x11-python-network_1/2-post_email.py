@@ -10,7 +10,6 @@ if __name__ == "__main__":
     from urllib.parse import urlencode
     from sys import argv
 
-
     email = {"email": argv[2]}
     request_email = Request(
             argv[1], urlencode(email).encode("ascii"))
