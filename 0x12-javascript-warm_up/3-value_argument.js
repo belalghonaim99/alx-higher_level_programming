@@ -5,7 +5,7 @@ If no arguments are passed to the script, print “No argument”
 You must use console.log(...) to print all output
 */
 if (process.argv[2]) {
-    console.log(process.argv[2]);
+  console.log(process.argv[2]);
 } else {
-    console.log('No argument');
+  console.log('No argument');
 }
