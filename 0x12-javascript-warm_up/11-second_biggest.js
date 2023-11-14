@@ -7,8 +7,8 @@ If the number of arguments is 1, print 0
 */
 
 if (process.argv.length <= 3) {
-    console.log(0);
+  console.log(0);
 } else {
-    const list = process.argv.slice(2).map(Number);
-    console.log(list.sort((a, b) => b - a)[1]);
+  const list = process.argv.slice(2).map(Number);
+  console.log(list.sort((a, b) => b - a)[1]);
 }
