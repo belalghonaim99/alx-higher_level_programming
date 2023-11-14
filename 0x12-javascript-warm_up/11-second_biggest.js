@@ -5,6 +5,7 @@ You can assume all arguments can be converted to integer
 If no argument passed, print 0
 If the number of arguments is 1, print 0
 */
+
 if (process.argv.length <= 3) {
   console.log(0);
 } else {
