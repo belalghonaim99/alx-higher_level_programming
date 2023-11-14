@@ -8,6 +8,6 @@ If the number of arguments is 1, print 0
 if (process.argv.length <= 3) {
   console.log(0);
 } else {
-    const list = process.argv.sort();
+  const list = process.argv.sort();
   console.log(list.reverse()[1]);
 }
