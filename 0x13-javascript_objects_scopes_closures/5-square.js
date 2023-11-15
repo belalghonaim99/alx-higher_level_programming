@@ -6,7 +6,7 @@ The constructor must take 1 argument: size
 The constructor of Rectangle must be called (by using super())
 */
 module.exports = class Square extends require('./4-rectangle.js') {
-    constructor (size) {
-      super(size, size);
-    }
-  };
+  constructor (size) {
+    super(size, size);
+  }
+};
