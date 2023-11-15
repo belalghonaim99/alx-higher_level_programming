@@ -5,8 +5,8 @@ Prototype: exports.esrever = function (list)
 You are not allow to use the built-in method reverse
 */
 exports.esrever = function (list) {
-    return list.reduceRight(function (version, current_list) {
-      version.push(current_list);
-      return version;
-    }, []);
-  };
+  return list.reduceRight(function (version, currentList) {
+    version.push(currentList);
+    return version;
+  }, []);
+};
