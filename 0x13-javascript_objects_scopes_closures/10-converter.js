@@ -6,4 +6,4 @@ Prototype: exports.converter = function (base)
 You are not allowed to import any file
 You are not allowed to declare any new variable (var, let, etc..)
 */
-exports.converter = function (base) { return base_number => base_number.toString(base); };
+exports.converter = function (base) { return baseNumber => baseNumber.toString(base); };
