@@ -4,10 +4,10 @@ http://0.0.0.0:5000/search_user with the letter as a parameter"""
 
 
 if __name__ == "__main__":
-    from requests import post
-    from sys import argv
+    import requests
+    import sys
 
-    q = argv[1] if len(argv) > 1 else ""
+    q = argv[1] if len(sys.argv) > 1 else ""
     post_req = post('http://0.0.0.0:5000/search_user', data={'q': q})
     try:
         response = post_req.json()
