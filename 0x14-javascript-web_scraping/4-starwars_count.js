@@ -5,14 +5,10 @@ const request = require('request');
 request(process.argv[2], (error, response, body) => {
   if (!error) {
     const movies = JSON.parse(body).results;
-    const cwwa = movies.reduce((count, movie) => {
+    console.log(results.reduce((count, movie) => {
       return movie.characters.some((character) => character.endsWith('/18/')) 
       ? count + 1
       : count;
-    }, 0);
-
-    console.log(cwwa);
-  } else {
-    console.error(error);
+    }, 0));
   }
 });
