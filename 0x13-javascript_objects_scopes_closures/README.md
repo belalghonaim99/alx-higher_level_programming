@@ -1,2 +1,1 @@
-0x13. JavaScript - Objects, Scopes and Closures
-OOP project
+# 0x13-javascript_objects_scopes_closures

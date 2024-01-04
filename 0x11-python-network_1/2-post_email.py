@@ -1,7 +1,5 @@
 #!/usr/bin/python3
-"""script that takes in a URL and an email,
-sends a POST request to the passed URL
-"""
+"""script that takes and sends a POST request to the passed URL """
 
 
 if __name__ == "__main__":
@@ -9,9 +7,9 @@ if __name__ == "__main__":
     from urllib.parse import urlencode
     from sys import argv
 
-    email = {"email": argv[2]}
-    request_email = Request(
-            argv[1], urlencode(email).encode("ascii"))
-    with urlopen(request_email) as web:
-        header = web.headers.get('X-Request-Id')
-        print(web.read().decode('utf-8'))
+    e = {"email": argv[2]}
+    request = Request(
+            argv[1], urlencode(e).encode("ascii"))
+    with urlopen(request) as w:
+        h = w.headers.get('X-Request-Id')
+        print(w.read().decode('utf-8'))
